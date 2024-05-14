@@ -93,8 +93,6 @@
              Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
           */
 
-      console.log("___________________________Esercizio 2________________________");
-
       const addClassToTitle = function (addClass) {
         const h1Class = document.querySelector("h1");
         h1Class.addClassList = addClass;
@@ -115,7 +113,11 @@
              Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
             */
 
-      const changeUrls = function () {};
+      const changeUrls = function (link) {
+        const newLink = document.querySelector("div>a");
+        newLink.setAttribute("href", link);
+      };
+      changeUrls("https://www.google.com");
 
       /* ESERCIZIO 5
              Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
@@ -169,8 +171,8 @@
 
       const makeItClickable = function () {
         const selectH1 = document.querySelector("h1");
-        const testo = select.innerText;
-        const newTesto = selectH1.slice(0, 1);
+        const testo = selectH1.innerText;
+        const newTesto = testo.slice(0, -1);
         selectH1.innerText = newTesto;
       };
       document.querySelector("h1").addEventListener("click", makeItClickable);
